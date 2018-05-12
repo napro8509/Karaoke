@@ -53,5 +53,11 @@ namespace KaraokeManager
                 addTab.AddTabControl(xtraTabControlMain, itemTabName, icon, userControl);
             }
         }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserControlMain.UCThongKeDoanhThu ucThongKeDoanhThu = new UserControlMain.UCThongKeDoanhThu();
+            addTabControl(ucThongKeDoanhThu, "Thống kê doanh thu", "icons8-chart-16");
+        }
     }
 }
