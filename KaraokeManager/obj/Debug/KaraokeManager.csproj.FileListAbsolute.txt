@@ -163,3 +163,40 @@ D:\Projects\Third year\Karaoke\Karaoke\KaraokeManager\obj\Debug\KaraokeManager.c
 D:\Projects\Third year\Karaoke\Karaoke\KaraokeManager\obj\Debug\KaraokeManager.exe
 D:\Projects\Third year\Karaoke\Karaoke\KaraokeManager\obj\Debug\KaraokeManager.pdb
 D:\Projects\Third year\Karaoke\Karaoke\KaraokeManager\obj\Debug\KaraokeManager.UserControlMain.UCThongKeDoanhThu.resources
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.XtraGrid.v17.1.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.XtraLayout.v17.1.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.XtraPrinting.v17.1.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.RichEdit.v17.1.Core.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.XtraTreeList.v17.1.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.Office.v17.1.Core.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.XtraGrid.v17.1.xml
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.XtraLayout.v17.1.xml
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.XtraPrinting.v17.1.xml
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.RichEdit.v17.1.Core.xml
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.XtraTreeList.v17.1.xml
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\DevExpress.Office.v17.1.Core.xml
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\de\DevExpress.XtraGrid.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\es\DevExpress.XtraGrid.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ja\DevExpress.XtraGrid.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ru\DevExpress.XtraGrid.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\de\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\es\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ja\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ru\DevExpress.XtraLayout.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\de\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\es\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ja\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ru\DevExpress.XtraPrinting.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\de\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\es\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ja\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ru\DevExpress.RichEdit.v17.1.Core.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\de\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\es\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ja\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ru\DevExpress.XtraTreeList.v17.1.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\de\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\es\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ja\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ru\DevExpress.Office.v17.1.Core.resources.dll
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\obj\Debug\KaraokeManager.UserControlMain.UCThongKeDoanhThu.resources

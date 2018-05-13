@@ -59,5 +59,11 @@ namespace KaraokeManager
             UserControlMain.UCThongKeDoanhThu ucThongKeDoanhThu = new UserControlMain.UCThongKeDoanhThu();
             addTabControl(ucThongKeDoanhThu, "Thống kê doanh thu", "icons8-chart-16");
         }
+
+        private void xtraTabControlMain_CloseButtonClick(object sender, EventArgs e)
+        {
+            xtraTabControlMain.TabPages.RemoveAt(xtraTabControlMain.SelectedTabPageIndex);
+            xtraTabControlMain.SelectedTabPageIndex = xtraTabControlMain.TabPages.Count - 1;
+        }
     }
 }

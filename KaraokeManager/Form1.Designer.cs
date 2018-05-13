@@ -586,34 +586,34 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1214, 68);
+            this.barDockControlTop.Size = new System.Drawing.Size(1214, 53);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 424);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 426);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1214, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1214, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 68);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 53);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 356);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 373);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1214, 68);
+            this.barDockControlRight.Location = new System.Drawing.Point(1214, 53);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 356);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 373);
             // 
             // barButtonItem1
             // 
@@ -700,21 +700,22 @@
             // 
             this.xtraTabControlMain.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControlMain.Location = new System.Drawing.Point(0, 68);
+            this.xtraTabControlMain.Location = new System.Drawing.Point(0, 53);
             this.xtraTabControlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabControlMain.Name = "xtraTabControlMain";
             this.xtraTabControlMain.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControlMain.Size = new System.Drawing.Size(1214, 356);
+            this.xtraTabControlMain.Size = new System.Drawing.Size(1214, 373);
             this.xtraTabControlMain.TabIndex = 4;
             this.xtraTabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
+            this.xtraTabControlMain.CloseButtonClick += new System.EventHandler(this.xtraTabControlMain_CloseButtonClick);
             this.xtraTabControlMain.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.xtraTabControlMain_ControlAdded);
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1207, 322);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1208, 345);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // Form1
