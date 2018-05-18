@@ -200,3 +200,4 @@ C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\es\DevExpress.Office.v
 C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ja\DevExpress.Office.v17.1.Core.resources.dll
 C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ru\DevExpress.Office.v17.1.Core.resources.dll
 C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\obj\Debug\KaraokeManager.UserControlMain.UCThongKeDoanhThu.resources
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\obj\Debug\KaraokeManager.Form2.resources
