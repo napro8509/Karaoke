@@ -21,7 +21,7 @@ namespace KaraokeManager
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Form1());
+            Application.Run(new Form2());
         }
     }
 }
