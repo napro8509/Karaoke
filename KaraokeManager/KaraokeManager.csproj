@@ -58,9 +58,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ChiTietHDKHDAO.cs" />
+    <Compile Include="DAO\HoaDonKhachHangDAO.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\KhuyenMaiDAO.cs" />
+    <Compile Include="DAO\LoaiMatHangDAO.cs" />
+    <Compile Include="DAO\LoaiPhongDAO.cs" />
     <Compile Include="DAO\MatHangDAO.cs" />
+    <Compile Include="DAO\NguoiDungDAO.cs" />
+    <Compile Include="DAO\NhaCungCapDAO.cs" />
+    <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DAO\PhongDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DTO\ChiTietHDKHDTO.cs" />
+    <Compile Include="DTO\HoaDonKhachHangDTO.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DTO\KhuyenMaiDTO.cs" />
+    <Compile Include="DTO\LoaiMatHangDTO.cs" />
+    <Compile Include="DTO\LoaiPhongDTO.cs" />
     <Compile Include="DTO\MatHangDTO.cs" />
+    <Compile Include="DTO\NguoiDungDTO.cs" />
+    <Compile Include="DTO\NhaCungCapDTO.cs" />
+    <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\PhongDTO.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
