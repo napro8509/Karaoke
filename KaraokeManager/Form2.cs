@@ -23,12 +23,15 @@ namespace KaraokeManager
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            LoadMatHangList();
+
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             UserControlMain.UCSuDungDichVu ucSuDungDichVu = new UserControlMain.UCSuDungDichVu();
+            //ucSuDungDichVu.Dock = DockStyle.Fill;
+            ucSuDungDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)));
             addTabControl(ucSuDungDichVu, "Sử dụng dịch vụ", "icons8-adjust-16");
         }
 
@@ -69,11 +72,5 @@ namespace KaraokeManager
             xtraTabControlMain.SelectedTabPageIndex = xtraTabControlMain.TabPages.Count - 1;
         }
 
-        private void LoadMatHangList()
-        {
-            matHangList = MatHangDAO.Instance.getMatHangList();
-            dataGridView1.DataSource = matHangList;
-            gridControl1.DataSource = matHangList;
-        }
     }
 }

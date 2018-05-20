@@ -11,6 +11,9 @@ namespace KaraokeManager.DAO
     class MatHangDAO
     {
         private static MatHangDAO instance;
+
+        private MatHangDAO() { }
+
         public static MatHangDAO Instance
         {
             get
@@ -20,7 +23,6 @@ namespace KaraokeManager.DAO
                 return instance;
             }
         }
-        private MatHangDAO() { }
 
         public List<MatHangDTO> getMatHangList()
         {

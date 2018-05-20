@@ -8,5 +8,19 @@ namespace KaraokeManager.DAO
 {
     class LoaiPhongDAO
     {
+        private static LoaiPhongDAO instance;
+
+        private LoaiPhongDAO() { }
+
+        public static LoaiPhongDAO Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new LoaiPhongDAO();
+                return instance;
+            }
+        }
+
     }
 }
