@@ -7,7 +7,7 @@ using DevExpress.XtraTab;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace KaraokeManager
+namespace KaraokeManager.Utilities
 {
     class AddTab
     {

@@ -96,11 +96,14 @@
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
+            this.xtpSuDungDichVuDefault = new DevExpress.XtraTab.XtraTabPage();
+            this.ucSuDungDichVuDefault = new KaraokeManager.UserControlMain.UCSuDungDichVu();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
+            this.xtpSuDungDichVuDefault.SuspendLayout();
             this.SuspendLayout();
             // 
             // barManager1
@@ -586,16 +589,16 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1214, 53);
+            this.barDockControlTop.Size = new System.Drawing.Size(1280, 53);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 426);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 673);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1214, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1280, 23);
             // 
             // barDockControlLeft
             // 
@@ -604,16 +607,16 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 53);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 373);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 620);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1214, 53);
+            this.barDockControlRight.Location = new System.Drawing.Point(1280, 53);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 373);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 620);
             // 
             // barButtonItem1
             // 
@@ -703,19 +706,35 @@
             this.xtraTabControlMain.Location = new System.Drawing.Point(0, 53);
             this.xtraTabControlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabControlMain.Name = "xtraTabControlMain";
-            this.xtraTabControlMain.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControlMain.Size = new System.Drawing.Size(1214, 373);
+            this.xtraTabControlMain.SelectedTabPage = this.xtpSuDungDichVuDefault;
+            this.xtraTabControlMain.Size = new System.Drawing.Size(1280, 620);
             this.xtraTabControlMain.TabIndex = 4;
             this.xtraTabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1});
+            this.xtraTabPage1,
+            this.xtpSuDungDichVuDefault});
             this.xtraTabControlMain.CloseButtonClick += new System.EventHandler(this.xtraTabControlMain_CloseButtonClick);
             this.xtraTabControlMain.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.xtraTabControlMain_ControlAdded);
+            // 
+            // xtpSuDungDichVuDefault
+            // 
+            this.xtpSuDungDichVuDefault.Controls.Add(this.ucSuDungDichVuDefault);
+            this.xtpSuDungDichVuDefault.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.xtpSuDungDichVuDefault.Name = "xtpSuDungDichVuDefault";
+            this.xtpSuDungDichVuDefault.Size = new System.Drawing.Size(1274, 592);
+            this.xtpSuDungDichVuDefault.Text = "Sử dụng dịch vụ";
+            // 
+            // ucSuDungDichVuDefault
+            // 
+            this.ucSuDungDichVuDefault.Location = new System.Drawing.Point(0, 0);
+            this.ucSuDungDichVuDefault.Name = "ucSuDungDichVuDefault";
+            this.ucSuDungDichVuDefault.Size = new System.Drawing.Size(1267, 589);
+            this.ucSuDungDichVuDefault.TabIndex = 0;
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1208, 345);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1274, 345);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // Form2
@@ -724,7 +743,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1214, 449);
+            this.ClientSize = new System.Drawing.Size(1280, 696);
             this.Controls.Add(this.xtraTabControlMain);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -740,6 +759,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).EndInit();
             this.xtraTabControlMain.ResumeLayout(false);
+            this.xtpSuDungDichVuDefault.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -814,6 +834,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem40;
         private DevExpress.XtraTab.XtraTabControl xtraTabControlMain;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage xtpSuDungDichVuDefault;
+        private UserControlMain.UCSuDungDichVu ucSuDungDichVuDefault;
     }
 }
 

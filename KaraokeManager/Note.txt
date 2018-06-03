@@ -1,0 +1,16 @@
+﻿Chú thích:
+sbtn:	SimpleButton
+lvw:	ListView
+ted:	TimeEdit
+ilst:	ImageList
+lst:	DevExpress_ListBoxControl
+xtp:	DevExpress_XtraTabPage
+xtc:	DevExpress_XtraTabControl
+spnl:	DevExpress_SidePanel
+txt:	TextEdit
+lbl:	Label
+ded:	DateEdit
+gct:	DevExpress_GridControl
+gvw:	DevExpress_GridView
+grc:	DevExpress_GroupControl
+UC:		UserControl

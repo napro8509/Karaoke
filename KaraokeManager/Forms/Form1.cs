@@ -6,22 +6,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using KaraokeManager.Utilities;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
-using KaraokeManager.DAO;
-using KaraokeManager.DTO;
 
 namespace KaraokeManager
 {
-    public partial class Form2 : DevExpress.XtraEditors.XtraForm
+    public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
-        private List<MatHangDTO> matHangList;
-        public Form2()
+        public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
@@ -29,9 +27,6 @@ namespace KaraokeManager
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             UserControlMain.UCSuDungDichVu ucSuDungDichVu = new UserControlMain.UCSuDungDichVu();
-            //ucSuDungDichVu.Dock = DockStyle.Fill;
-            ucSuDungDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
             addTabControl(ucSuDungDichVu, "Sử dụng dịch vụ", "icons8-adjust-16");
         }
 
@@ -71,6 +66,5 @@ namespace KaraokeManager
             xtraTabControlMain.TabPages.RemoveAt(xtraTabControlMain.SelectedTabPageIndex);
             xtraTabControlMain.SelectedTabPageIndex = xtraTabControlMain.TabPages.Count - 1;
         }
-
     }
 }

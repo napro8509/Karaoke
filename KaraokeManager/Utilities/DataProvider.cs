@@ -6,14 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KaraokeManager
+namespace KaraokeManager.Utilities
 {
     class DataProvider
     {
-        public static DataProvider instance;
-
         public const string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QUANLYKARAOKE;Integrated Security=True";
 
+        public static DataProvider instance;
         
         public static DataProvider Instance
         {

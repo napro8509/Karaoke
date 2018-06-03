@@ -65,7 +65,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_adjust_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-adjust-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_adjust_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -75,7 +75,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_cancel_delete_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-cancel-delete-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_cancel_delete_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -85,7 +85,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_chart_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-chart-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_chart_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_checklist_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-checklist-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_checklist_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +105,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_customer_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-customer-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_customer_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +115,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_doughnut_chart_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-doughnut-chart-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_doughnut_chart_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +125,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_expensive_price_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-expensive-price-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_expensive_price_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +135,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_external_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-external-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_external_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -145,7 +145,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_hashtag_activity_feed_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-hashtag-activity-feed-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_hashtag_activity_feed_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -155,7 +155,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_import_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-import-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_import_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -165,7 +165,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_internal_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-internal-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_internal_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -175,7 +175,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_list_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-list-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_list_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -185,7 +185,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_open_box_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-open-box-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_open_box_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -195,7 +195,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_open_box_161 {
             get {
-                object obj = ResourceManager.GetObject("icons8-open-box-161", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_open_box_161", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -205,7 +205,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_room_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-room-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_room_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -215,7 +215,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_scan_stock_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-scan-stock-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_scan_stock_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -225,7 +225,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_shipped_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-shipped-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_shipped_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -235,7 +235,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_shop_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-shop-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_shop_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -245,7 +245,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_statistics_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-statistics-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_statistics_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -255,7 +255,7 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_ticket_purchase_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-ticket-purchase-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_ticket_purchase_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -265,7 +265,47 @@ namespace KaraokeManager.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_warehouse_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-warehouse-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_warehouse_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microphone_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("microphone_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microphone_off_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("microphone_off_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microphone_on_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("microphone_on_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("search_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
