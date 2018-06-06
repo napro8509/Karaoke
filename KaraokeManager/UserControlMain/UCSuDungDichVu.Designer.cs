@@ -69,6 +69,7 @@
             this.grcPhanLoai = new DevExpress.XtraEditors.GroupControl();
             this.lstPhanLoai = new DevExpress.XtraEditors.ListBoxControl();
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
+            this.sbtnThanhToan = new DevExpress.XtraEditors.SimpleButton();
             this.sbtnChuyenPhong = new DevExpress.XtraEditors.SimpleButton();
             this.sbtnGopPhong = new DevExpress.XtraEditors.SimpleButton();
             this.sbtnBot = new DevExpress.XtraEditors.SimpleButton();
@@ -83,7 +84,7 @@
             this.lblTienThue = new DevExpress.XtraEditors.LabelControl();
             this.lblTienAnUong = new DevExpress.XtraEditors.LabelControl();
             this.lblTienGio = new DevExpress.XtraEditors.LabelControl();
-            this.sbtnThanhToan = new DevExpress.XtraEditors.SimpleButton();
+            this.txtPhanTramThue = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtcDanhSachLau)).BeginInit();
             this.spnlPhong.SuspendLayout();
             this.spnlDatHang.SuspendLayout();
@@ -112,6 +113,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTienAnUong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhiDichVu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTienGio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhanTramThue.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtcDanhSachLau
@@ -206,6 +208,7 @@
             // 
             this.txtTenKhachHang.Location = new System.Drawing.Point(91, 72);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
+            this.txtTenKhachHang.Properties.ReadOnly = true;
             this.txtTenKhachHang.Size = new System.Drawing.Size(180, 20);
             this.txtTenKhachHang.TabIndex = 15;
             // 
@@ -500,6 +503,15 @@
             this.sidePanel2.TabIndex = 4;
             this.sidePanel2.Text = "spnlDieuKhien";
             // 
+            // sbtnThanhToan
+            // 
+            this.sbtnThanhToan.Location = new System.Drawing.Point(17, 318);
+            this.sbtnThanhToan.Name = "sbtnThanhToan";
+            this.sbtnThanhToan.Size = new System.Drawing.Size(94, 60);
+            this.sbtnThanhToan.TabIndex = 4;
+            this.sbtnThanhToan.Text = "Thanh toán";
+            this.sbtnThanhToan.Click += new System.EventHandler(this.sbtnThanhToan_Click);
+            // 
             // sbtnChuyenPhong
             // 
             this.sbtnChuyenPhong.Location = new System.Drawing.Point(17, 44);
@@ -538,6 +550,7 @@
             // 
             // sidePanel3
             // 
+            this.sidePanel3.Controls.Add(this.txtPhanTramThue);
             this.sidePanel3.Controls.Add(this.txtTongCong);
             this.sidePanel3.Controls.Add(this.lblTongCong);
             this.sidePanel3.Controls.Add(this.txtTienThue);
@@ -578,14 +591,14 @@
             // txtTienThue
             // 
             this.txtTienThue.EditValue = "0";
-            this.txtTienThue.Location = new System.Drawing.Point(210, 101);
+            this.txtTienThue.Location = new System.Drawing.Point(328, 101);
             this.txtTienThue.Name = "txtTienThue";
             this.txtTienThue.Properties.Appearance.Options.UseTextOptions = true;
             this.txtTienThue.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtTienThue.Properties.DisplayFormat.FormatString = "n0";
             this.txtTienThue.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtTienThue.Properties.ReadOnly = true;
-            this.txtTienThue.Size = new System.Drawing.Size(270, 20);
+            this.txtTienThue.Size = new System.Drawing.Size(152, 20);
             this.txtTienThue.TabIndex = 12;
             // 
             // txtTienAnUong
@@ -651,14 +664,18 @@
             this.lblTienGio.TabIndex = 0;
             this.lblTienGio.Text = "Tiền giờ";
             // 
-            // sbtnThanhToan
+            // txtPhanTramThue
             // 
-            this.sbtnThanhToan.Location = new System.Drawing.Point(17, 318);
-            this.sbtnThanhToan.Name = "sbtnThanhToan";
-            this.sbtnThanhToan.Size = new System.Drawing.Size(94, 60);
-            this.sbtnThanhToan.TabIndex = 4;
-            this.sbtnThanhToan.Text = "Thanh toán";
-            this.sbtnThanhToan.Click += new System.EventHandler(this.sbtnThanhToan_Click);
+            this.txtPhanTramThue.EditValue = "10%";
+            this.txtPhanTramThue.Location = new System.Drawing.Point(210, 101);
+            this.txtPhanTramThue.Name = "txtPhanTramThue";
+            this.txtPhanTramThue.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtPhanTramThue.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtPhanTramThue.Properties.DisplayFormat.FormatString = "n0";
+            this.txtPhanTramThue.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtPhanTramThue.Properties.ReadOnly = true;
+            this.txtPhanTramThue.Size = new System.Drawing.Size(112, 20);
+            this.txtPhanTramThue.TabIndex = 15;
             // 
             // UCSuDungDichVu
             // 
@@ -702,6 +719,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTienAnUong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhiDichVu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTienGio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhanTramThue.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -762,5 +780,6 @@
         private DevExpress.XtraEditors.SimpleButton sbtnChuyenPhong;
         private DevExpress.XtraEditors.SimpleButton sbtnGopPhong;
         private DevExpress.XtraEditors.SimpleButton sbtnThanhToan;
+        private DevExpress.XtraEditors.TextEdit txtPhanTramThue;
     }
 }

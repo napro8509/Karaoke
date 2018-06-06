@@ -35,6 +35,7 @@ namespace KaraokeManager.UserControlMain
         public DevExpress.XtraTab.XtraTabPage[] xtpTang;
         public System.Windows.Forms.ListView[] lvwTang;
         Timer tmrThoiGianHat;
+        Timer tmrGioHienTai;
         const int giaGio = 100000;
         const float heSoThue = 0.1f;
 
@@ -45,11 +46,15 @@ namespace KaraokeManager.UserControlMain
             tangList = new List<Tang>();
             phongList = new List<Phong>();
             tmrThoiGianHat = new Timer();
+            tmrGioHienTai = new Timer();
 
             //Thiết lập thông số mặc định
-            tedGioBatDat.EditValue = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
-            tedGioKetThuc.EditValue = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
-            dedNgay.EditValue = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            DateTime newGioBatDau = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+            DateTime newGioKetThuc = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+            DateTime newNgay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            tedGioBatDat.EditValue = newGioBatDau.ToString("HH:mm");
+            tedGioKetThuc.EditValue = newGioKetThuc.ToString("HH:mm");
+            dedNgay.EditValue = newNgay.ToString("dd/MM/yyyy");
 
             //Khởi tạo thông tin tầng, phòng
             soTang = DAO.PhongDAO.Instance.getSoTang();
@@ -71,6 +76,10 @@ namespace KaraokeManager.UserControlMain
                 lvwTang[i].DoubleClick += new System.EventHandler(lvwTang_DoubleClick);
             }
 
+            tmrThoiGianHat.Interval = 60000;
+            tmrThoiGianHat.Tick += new EventHandler(this.tmrThoiGianHat_Tick);
+            tmrGioHienTai.Interval = 60000;
+            tmrGioHienTai.Tick += new EventHandler(this.tmrGioHienTai_Tick);
         }
 
         private void UCSuDungDichVu_Load(Object sender, EventArgs e)
@@ -84,8 +93,8 @@ namespace KaraokeManager.UserControlMain
             dtMatHangDaChon.Columns.Add("ThanhTienDaChon");
 
             txtThoiGianHat.Text = "00:00";
-            tmrThoiGianHat.Interval = 60000;
-            tmrThoiGianHat.Tick += new EventHandler(this.tmrThoiGianHat_Tick);
+
+            tmrGioHienTai.Start();
         }
 
         private void sbtnTimKiem_Click(object sender, EventArgs e)
@@ -109,7 +118,8 @@ namespace KaraokeManager.UserControlMain
         {
             if (phongList.Count > 0 || txtPhong.Text != "")
             {
-                tedGioBatDat.EditValue = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                DateTime newGioBatDau = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                tedGioBatDat.EditValue = newGioBatDau.ToString("HH:mm");
                 sbtnBatDat.Enabled = false;
                 txtThoiGianHat.Text = "00:00";
                 tmrThoiGianHat.Start();
@@ -124,7 +134,8 @@ namespace KaraokeManager.UserControlMain
         {
             if (phongList.Count > 0 || txtPhong.Text != "")
             {
-                tedGioKetThuc.EditValue = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                DateTime newGioKetThuc = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                tedGioKetThuc.EditValue = newGioKetThuc.ToString("HH:mm");
                 sbtnKetThuc.Enabled = false;
             }
             else
@@ -150,6 +161,8 @@ namespace KaraokeManager.UserControlMain
                     int gia = Int32.Parse(row.Row.ItemArray[2].ToString());
                     int soLuong = 1;
                     int thanhTien = soLuong * gia;
+                    int tongAnUong = Helpers.Instance.convertSeparatedStringToInt(txtTienAnUong.Text) + thanhTien;
+                    int tongThanhTien = Helpers.Instance.convertSeparatedStringToInt(txtTongCong.Text) + thanhTien;
 
                     DataRow destRow = dtMatHangDaChon.NewRow();
                     destRow[0] = tenMatHang;
@@ -159,6 +172,9 @@ namespace KaraokeManager.UserControlMain
                     destRow[4] = String.Format("{0:n0}", thanhTien);
                     dtMatHangDaChon.Rows.Add(destRow);
                     gctMatHangDaChon.DataSource = dtMatHangDaChon;
+
+                    txtTienAnUong.Text = string.Format("{0:n0}", tongAnUong);
+                    txtTongCong.Text = string.Format("{0:n0}", tongThanhTien);
                 }
                 catch (Exception ex)
                 {
@@ -180,6 +196,7 @@ namespace KaraokeManager.UserControlMain
                 GridHitInfo info = view.CalcHitInfo(ea.Location);
                 string tenMatHangDaChon = gvwMatHangDaChon.GetRowCellValue(info.RowHandle, "TenMatHangDaChon").ToString();
                 string soLuongDaChon = gvwMatHangDaChon.GetRowCellValue(info.RowHandle, "SoLuongDaChon").ToString();
+                int soLuongCu = Int32.Parse(soLuongDaChon);
                 NhapSoLuong nsl = new NhapSoLuong(tenMatHangDaChon, soLuongDaChon);
                 if (nsl.ShowDialog() == DialogResult.OK)
                 {
@@ -189,8 +206,10 @@ namespace KaraokeManager.UserControlMain
                     String tenMatHang = row.Row.ItemArray[0].ToString();
                     String donViTinh = row.Row.ItemArray[1].ToString();
                     int gia = Helpers.Instance.convertSeparatedStringToInt(row.Row.ItemArray[2].ToString());
-                    int soLuong = Int32.Parse(nsl.soLuong);
-                    int thanhTien = soLuong * gia;
+                    int soLuongMoi = Int32.Parse(nsl.soLuong);
+                    int thanhTien = soLuongMoi * gia;
+                    int tongAnUong = Helpers.Instance.convertSeparatedStringToInt(txtTienAnUong.Text) - soLuongCu*gia + thanhTien;
+                    int tongThanhTien = Helpers.Instance.convertSeparatedStringToInt(txtTongCong.Text) - soLuongCu*gia + thanhTien;
 
                     gvwMatHangDaChon.DeleteRow(view.FocusedRowHandle);
 
@@ -199,11 +218,14 @@ namespace KaraokeManager.UserControlMain
                     destRow[0] = tenMatHang;
                     destRow[1] = donViTinh;
                     destRow[2] = String.Format("{0:n0}", gia);
-                    destRow[3] = soLuong;
+                    destRow[3] = soLuongMoi;
                     destRow[4] = String.Format("{0:n0}", thanhTien);
 
                     dtMatHangDaChon.Rows.Add(destRow);
                     gctMatHangDaChon.DataSource = dtMatHangDaChon;
+
+                    txtTienAnUong.Text = string.Format("{0:n0}", tongAnUong);
+                    txtTongCong.Text = string.Format("{0:n0}", tongThanhTien);
                 }
             }
             else
@@ -267,6 +289,18 @@ namespace KaraokeManager.UserControlMain
                 if (MessageBox.Show("Xoá mặt hàng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) !=
                     DialogResult.Yes)
                     return;
+                GridView gridView = gctMatHangDaChon.FocusedView as GridView;
+                DataRowView row = (DataRowView)gridView.GetRow(gridView.FocusedRowHandle);
+
+                String thanhTien = row.Row.ItemArray[4].ToString();
+                int thanhTien_i = Helpers.Instance.convertSeparatedStringToInt(thanhTien);
+                int tienAnUong = Helpers.Instance.convertSeparatedStringToInt(txtTienAnUong.Text);
+                int tongCong = Helpers.Instance.convertSeparatedStringToInt(txtTongCong.Text);
+                tienAnUong -= thanhTien_i;
+                tongCong -= thanhTien_i;
+                txtTienAnUong.Text = string.Format("{0:n0}", tienAnUong);
+                txtTongCong.Text = string.Format("{0:n0}", tongCong);
+
                 gvwMatHangDaChon.DeleteRow(gvwMatHangDaChon.FocusedRowHandle);
             }
             else
@@ -291,13 +325,13 @@ namespace KaraokeManager.UserControlMain
                                 break;
                             }
                         }
-                        pre.gioBatDau = DateTime.ParseExact(tedGioBatDat.Text, "hh:mm tt", System.Globalization.CultureInfo.CurrentCulture);
-                        pre.gioKetThuc = DateTime.ParseExact(tedGioKetThuc.Text, "hh:mm tt", System.Globalization.CultureInfo.CurrentCulture);
+                        pre.gioBatDau = DateTime.ParseExact(tedGioBatDat.Text, "HH:mm", System.Globalization.CultureInfo.CurrentCulture);
+                        pre.gioKetThuc = DateTime.ParseExact(tedGioKetThuc.Text, "HH:mm", System.Globalization.CultureInfo.CurrentCulture);
                         pre.ngay = DateTime.ParseExact(dedNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
                         pre.tenKhachHang = txtTenKhachHang.Text;
                         pre.maKhachHang = txtMaKH.Text;
                         pre.matHangDaChon = dtMatHangDaChon;
-                        DateTime thoiGianHat = DateTime.ParseExact(txtThoiGianHat.Text, "hh:mm", System.Globalization.CultureInfo.CurrentCulture);
+                        DateTime thoiGianHat = DateTime.ParseExact(txtThoiGianHat.Text, "HH:mm", System.Globalization.CultureInfo.CurrentCulture);
                         pre.tienGio = Helpers.Instance.tinhTienGio(thoiGianHat, giaGio);
                         pre.tienAnUong = Helpers.Instance.tinhTienAnUong(dtMatHangDaChon);
                         pre.phiDichVu = 0;
@@ -337,8 +371,8 @@ namespace KaraokeManager.UserControlMain
                     tang, 
                     maPhong,
                     true,
-                    DateTime.ParseExact(tedGioBatDat.Text, "hh:mm tt", System.Globalization.CultureInfo.CurrentCulture),
-                    DateTime.ParseExact(tedGioKetThuc.Text, "hh:mm tt", System.Globalization.CultureInfo.CurrentCulture),
+                    DateTime.ParseExact(tedGioBatDat.Text, "HH:mm", System.Globalization.CultureInfo.CurrentCulture),
+                    DateTime.ParseExact(tedGioKetThuc.Text, "HH:mm", System.Globalization.CultureInfo.CurrentCulture),
                     DateTime.ParseExact(dedNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture),
                     "",
                     "",
@@ -351,8 +385,10 @@ namespace KaraokeManager.UserControlMain
 
                 phongList.Add(p);
 
-                tedGioBatDat.EditValue = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
-                tedGioKetThuc.EditValue = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                DateTime newGioBatDau = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                DateTime newGioKetThuc = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                tedGioBatDat.EditValue = newGioBatDau.ToString("HH:mm");
+                tedGioKetThuc.EditValue = newGioKetThuc.ToString("HH:mm");
                 //dedNgay.EditValue = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
                 txtTenKhachHang.Text = "";
                 txtMaKH.Text = "";
@@ -379,8 +415,8 @@ namespace KaraokeManager.UserControlMain
                 {
                     if (p.ten == maPhong)
                     {
-                        tedGioBatDat.Text = p.gioBatDau.ToString("hh:mm tt");
-                        tedGioKetThuc.Text = p.gioKetThuc.ToString("hh:mm tt");
+                        tedGioBatDat.Text = p.gioBatDau.ToString("HH:mm");
+                        tedGioKetThuc.Text = p.gioKetThuc.ToString("HH:mm");
                         dedNgay.Text = p.ngay.ToString("dd/MM/yyyy");
                         txtTenKhachHang.Text = p.tenKhachHang;
                         txtMaKH.Text = p.maKhachHang;
@@ -395,7 +431,7 @@ namespace KaraokeManager.UserControlMain
                         dtMatHangDaChon = p.matHangDaChon;
 
                         gctMatHangDaChon.DataSource = dtMatHangDaChon;
-                        txtThoiGianHat.Text = Helpers.Instance.tinhThoiGianHat(p.gioBatDau);
+                        txtThoiGianHat.Text = Helpers.Instance.tinhThoiGianHat(p.gioBatDau).ToString("HH:mm");
                         txtTienGio.Text = String.Format("{0:n0}", p.tienGio);
                         txtTienAnUong.Text = String.Format("{0:n0}", p.tienAnUong);
                         txtPhiDichVu.Text = String.Format("{0:n0}", p.phiDichVu);
@@ -410,11 +446,26 @@ namespace KaraokeManager.UserControlMain
 
         private void tmrThoiGianHat_Tick(object sender, EventArgs e)
         {
-            if (sbtnBatDat.Enabled == false)
+            DateTime gioBatDau = DateTime.ParseExact(tedGioBatDat.Text, "HH:mm", System.Globalization.CultureInfo.CurrentCulture);
+            DateTime thoiGianHat = Helpers.Instance.tinhThoiGianHat(gioBatDau);
+            txtThoiGianHat.Text = thoiGianHat.ToString("HH:mm");
+
+            int tienGio = Helpers.Instance.tinhTienGio(thoiGianHat, giaGio);
+            int tienAnUong = Helpers.Instance.convertSeparatedStringToInt(txtTienAnUong.Text);
+            txtTienGio.Text = string.Format("{0:n0}", tienGio);
+            txtTongCong.Text = string.Format("{0:n0},", (tienGio + tienAnUong));
+        }
+
+        private void tmrGioHienTai_Tick(object sender, EventArgs e)
+        {
+            if (sbtnBatDat.Enabled == true)
             {
-                DateTime gioBatDau = DateTime.ParseExact(tedGioBatDat.Text, "hh:mm tt", System.Globalization.CultureInfo.CurrentCulture);
-                txtThoiGianHat.Text = Helpers.Instance.tinhThoiGianHat(gioBatDau);
+                DateTime newGioBatDau = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                tedGioBatDat.EditValue = newGioBatDau.ToString("HH:mm");
             }
+
+            DateTime newGioKetThuc = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+            tedGioKetThuc.EditValue = newGioKetThuc.ToString("HH:mm");
         }
 
         private void gvwMatHangDaChon_KeyDown(object sender, KeyEventArgs e)
@@ -573,76 +624,95 @@ namespace KaraokeManager.UserControlMain
 
         private void sbtnThanhToan_Click(object sender, EventArgs e)
         {
-            try
+            if (phongList.Count > 0 || txtPhong.Text != "")
             {
-                int maKhachHang = Int32.Parse(txtMaKH.Text);
-                string maPhong = txtPhong.Text;
-                DateTime gioBatDau = DateTime.ParseExact(tedGioBatDat.Text, "hh:mm tt", System.Globalization.CultureInfo.CurrentCulture);
-                DateTime gioKetThuc = DateTime.ParseExact(tedGioKetThuc.Text, "hh:mm tt", System.Globalization.CultureInfo.CurrentCulture);
-                int tienGio = Helpers.Instance.convertSeparatedStringToInt(txtTienGio.Text);
-                int tienAnUong = Helpers.Instance.convertSeparatedStringToInt(txtTienAnUong.Text);
-                int phiDichVu = Helpers.Instance.convertSeparatedStringToInt(txtPhiDichVu.Text);
-                int giamGia = 0;
-                int tienThue = Helpers.Instance.convertSeparatedStringToInt(txtTienThue.Text);
-                int tongCong = Helpers.Instance.convertSeparatedStringToInt(txtTongCong.Text);
-                DateTime ngay = DateTime.ParseExact(dedNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
-                int maNguoiThu = 1;
-                int tienKhachHangDua = tongCong;
-
-                
-                if (DAO.HoaDonKhachHangDAO.Instance.addHoaDonKhachHang(
-                        maKhachHang,
-                        maPhong,
-                        gioBatDau,
-                        gioKetThuc,
-                        tienGio,
-                        tienAnUong,
-                        phiDichVu,
-                        giamGia,
-                        tienThue,
-                        tongCong,
-                        ngay,
-                        maNguoiThu,
-                        tienKhachHangDua))
+                try
                 {
-                    MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int maKhachHang = Int32.Parse(txtMaKH.Text);
+                    string maPhong = txtPhong.Text;
+                    DateTime gioBatDau = DateTime.ParseExact(tedGioBatDat.Text, "HH:mm", System.Globalization.CultureInfo.CurrentCulture);
+                    DateTime gioKetThuc = DateTime.ParseExact(tedGioKetThuc.Text, "HH:mm", System.Globalization.CultureInfo.CurrentCulture);
+                    int tienGio = Helpers.Instance.convertSeparatedStringToInt(txtTienGio.Text);
+                    int tienAnUong = Helpers.Instance.convertSeparatedStringToInt(txtTienAnUong.Text);
+                    int phiDichVu = Helpers.Instance.convertSeparatedStringToInt(txtPhiDichVu.Text);
+                    int giamGia = 0;
+                    int tienThue = Helpers.Instance.convertSeparatedStringToInt(txtTienThue.Text);
+                    int tongCong = Helpers.Instance.convertSeparatedStringToInt(txtTongCong.Text);
+                    DateTime ngay = DateTime.ParseExact(dedNgay.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
+                    int maNguoiThu = 1;
+                    int tienKhachHangDua = tongCong;
+
+
+                    if (DAO.HoaDonKhachHangDAO.Instance.addHoaDonKhachHang(
+                            maKhachHang,
+                            maPhong,
+                            gioBatDau,
+                            gioKetThuc,
+                            tienGio,
+                            tienAnUong,
+                            phiDichVu,
+                            giamGia,
+                            tienThue,
+                            tongCong,
+                            ngay,
+                            maNguoiThu,
+                            tienKhachHangDua))
+                    {
+                        MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    DataTable dataTable = (DataTable)gctMatHangDaChon.DataSource;
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        int maHoaDonKhachHang = DAO.HoaDonKhachHangDAO.Instance.getMaxMaHoaDonKhachHang();
+                        string tenMatHangDaChon = row["TenMatHangDaChon"].ToString();
+                        int maMatHang = DAO.MatHangDAO.Instance.getMaMatHangByTenMatHang(tenMatHangDaChon);
+                        int soLuongCTHDKH = Int32.Parse(row["SoLuongDaChon"].ToString());
+                        int thanhTien = Helpers.Instance.convertSeparatedStringToInt(row["ThanhTienDaChon"].ToString());
+
+                        DAO.ChiTietHDKHDAO.Instance.addChiTietHDKH(
+                                maHoaDonKhachHang,
+                                maMatHang,
+                                soLuongCTHDKH,
+                                thanhTien);
+                    }
+
+                    resetAllControl();
+                    var PhongCanXoa = phongList.Where(r => r.ten == txtPhong.Text);
+                    if (PhongCanXoa.Count() > 0)
+                        foreach (Phong p in PhongCanXoa)
+                        {
+                            int soThuTuPhong = Helpers.Instance.getIndexOfPhongByName(tangList, p.ten);
+                            int soThuTuTang = p.tang;
+                            phongList.Remove(p);
+                            lvwTang[soThuTuTang].Items[soThuTuPhong].ImageIndex = 0;
+                        }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message);
                 }
-
-                DataTable dataTable = (DataTable) gctMatHangDaChon.DataSource;
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    int maHoaDonKhachHang = DAO.HoaDonKhachHangDAO.Instance.getMaxMaHoaDonKhachHang();
-                    string tenMatHangDaChon = row["TenMatHangDaChon"].ToString();
-                    int maMatHang = DAO.MatHangDAO.Instance.getMaMatHangByTenMatHang(tenMatHangDaChon);
-                    int soLuongCTHDKH = Int32.Parse(row["SoLuongDaChon"].ToString());
-                    int thanhTien = Helpers.Instance.convertSeparatedStringToInt(row["ThanhTienDaChon"].ToString());
-
-                    DAO.ChiTietHDKHDAO.Instance.addChiTietHDKH(
-                            maHoaDonKhachHang,
-                            maMatHang,
-                            soLuongCTHDKH,
-                            thanhTien);
-                }
-
-                resetAllControl();
-
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Bạn cần khởi động một phòng trước", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public void resetAllControl()
         {
             //Thiết lập thông số mặc định
-            tedGioBatDat.EditValue = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
-            tedGioKetThuc.EditValue = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
-            dedNgay.EditValue = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            DateTime newGioBatDau = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+            DateTime newGioKetThuc = new DateTime(1, 1, 1, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+            DateTime newNgay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            tedGioBatDat.EditValue = newGioBatDau.ToString("HH:mm");
+            tedGioKetThuc.EditValue = newGioKetThuc.ToString("HH:mm");
+            dedNgay.EditValue = newNgay.ToString("dd/MM/yyyy");
 
             txtThoiGianHat.Text = "00:00";
             txtTang.Text = string.Empty;

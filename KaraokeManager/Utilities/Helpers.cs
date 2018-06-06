@@ -196,11 +196,11 @@ namespace KaraokeManager.Utilities
             lstPhanLoai.Items.AddRange(DAO.LoaiMatHangDAO.Instance.getTenLoaiMatHang());
         }
 
-        public string tinhThoiGianHat(DateTime gioBatDau)
+        public DateTime tinhThoiGianHat(DateTime gioBatDau)
         {
             int hour = DateTime.Now.Hour - gioBatDau.Hour;
             int min = DateTime.Now.Minute - gioBatDau.Minute;
-            string thoiGianHat = hour.ToString().PadLeft(2, '0') + ":" + min.ToString().PadLeft(2, '0');
+            DateTime thoiGianHat = new DateTime(1, 1, 1, hour, min, 0);
             return thoiGianHat;
         }
 

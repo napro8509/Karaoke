@@ -211,3 +211,4 @@ C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ja\DevExpress.XtraWiza
 C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\bin\Debug\ru\DevExpress.XtraWizard.v17.1.resources.dll
 C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\obj\Debug\KaraokeManager.Forms.NhapSoLuong.resources
 C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\obj\Debug\KaraokeManager.Forms.ChonPhong.resources
+C:\Users\Nguyen Xuan Hao\Karaoke\KaraokeManager\obj\Debug\KaraokeManager.Forms.QuanLyKhachHang.resources
